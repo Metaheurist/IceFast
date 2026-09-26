@@ -1,13 +1,11 @@
-# Getting started
-
-Short command cheat sheet. Canonical guide: **[setup-and-usage.md](setup-and-usage.md)**.
+# Installation & usage
 
 ## Requirements
 
-- Node.js 22+ (npm; see `.nvmrc`)
+- **Node.js 22+** (npm; see `.nvmrc`)
 - Modern Chromium or Safari for the PWA and on-device OCR
 
-## Run locally
+## Install and run
 
 ```bash
 npm install
@@ -23,10 +21,10 @@ npm run dev
 | `npm run dev` | Rebuild demo DB + OCR assets, then Vite |
 | `npm run db:build` | Write `public/demo.db` only |
 | `npm run ocr:sync` | Copy Tesseract worker/core/lang files into `public/ocr` |
-| `npm test` | Rebuild DB, then Vitest |
-| `npm run test:watch` | Vitest watch (no pretest unless you run `db:build`) |
+| `npm test` | Rebuild DB, then Vitest once |
+| `npm run test:watch` | Vitest watch |
 | `npm run test:coverage` | Coverage report |
-| `npm run build` | Production bundle (`prebuild` also rebuilds DB + OCR) |
+| `npm run build` | Production bundle (`prebuild` rebuilds DB + OCR) |
 | `npm run preview` | Serve the production build |
 
 ## Sheet date
@@ -58,3 +56,14 @@ Do not commit client PDF extracts or OCR scratch folders — the demo day is gen
 ## Refresh
 
 Header **Refresh** reloads sheets and yard units from local `demo.db`. Floor notes and Temps actions taken in this session are discarded. Last-sync time is shown in the header on larger screens.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+Static output lands in `dist/`. There is no backend server; host like any static SPA/PWA.
+
+Short cheat sheet: [getting-started.md](getting-started.md). CI packaging notes: [build-test-and-ci.md](build-test-and-ci.md).

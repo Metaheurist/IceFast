@@ -1,6 +1,4 @@
-# Testing
-
-Compact suite map. Canonical guide: **[testing-and-configuration.md](testing-and-configuration.md)**. CI: **[build-test-and-ci.md](build-test-and-ci.md)**.
+# Testing & configuration
 
 Vitest + Testing Library (`jsdom`). `npm test` runs `pretest` → `db:build` then `vitest run`.
 
@@ -11,6 +9,8 @@ npm test              # rebuild demo.db, run once
 npm run test:watch    # watch mode (run db:build yourself if seed changed)
 npm run test:coverage # coverage report
 ```
+
+Configuration lives in `vite.config.js` under `test` (`environment: 'jsdom'`, `setupFiles: './src/test/setup.js'`).
 
 ## Map of suites
 
@@ -36,3 +36,9 @@ When adding seed jobs, prefer invented customers and the helpers in `generateDem
 - Pass `seedTrailers` into `AppProvider` for a frozen graph in component tests (avoids hitting SQLite).
 - OCR engine files are not required for most unit tests; `localOcr.test.js` only checks status helpers.
 - Sheet matching regressions belong in `sheetGap.test.js` so Floor Scan behaviour stays pinned.
+
+## CI
+
+Every push and pull request to `main` runs `npm test` (and related gates). See [build-test-and-ci.md](build-test-and-ci.md).
+
+Compact suite map also appears in [testing.md](testing.md) and [architecture.md](architecture.md).

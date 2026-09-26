@@ -48,7 +48,7 @@ Demo fleet IDs in the seed use the fictional **IF** trailer prefix (e.g. IF200).
 
 ## Tests
 
-Vitest + Testing Library (`jsdom`). `pretest` rebuilds `demo.db`.
+Vitest + Testing Library (`jsdom`). `pretest` rebuilds `demo.db`. Full map and CI: [testing-and-configuration.md](testing-and-configuration.md), [build-test-and-ci.md](build-test-and-ci.md).
 
 | Area | Files |
 | --- | --- |

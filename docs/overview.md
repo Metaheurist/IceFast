@@ -1,5 +1,7 @@
 # Overview
 
+Compact product summary. Full feature walkthrough: **[app-and-features.md](app-and-features.md)**.
+
 **IceFast** is an open-source warehouse companion for cold-chain operations. Floor staff and traffic share one local day of work instead of paper sheets and WhatsApp.
 
 A TMS (for example Mandata Enterprise, formerly Manpack) can remain the planner’s system of record. IceFast sits beside it: sheets, pallet progress, notes, and the yard temps loop that the TMS does not replace on the dock.
