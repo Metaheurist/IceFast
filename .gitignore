@@ -1,0 +1,12 @@
+node_modules
+dist
+dev-dist
+.DS_Store
+*.local
+.vite
+.firecrawl
+public/ocr/**
+!public/ocr/README.txt
+public/demo.db
+coverage
+*.traineddata
