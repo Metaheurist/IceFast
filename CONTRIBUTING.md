@@ -2,6 +2,12 @@
 
 Thanks for helping improve this open-source warehouse companion.
 
+## Prerequisites
+
+1. [docs/SECURITY.md](docs/SECURITY.md) — fictional seed only; no live TMS credentials in-repo.
+2. [docs/data.md](docs/data.md) and [docs/mandata.md](docs/mandata.md) before changing seed or handshake shapes.
+3. Open an Issue before large features or a live Mandata join.
+
 ## Setup
 
 ```bash
@@ -9,7 +15,7 @@ npm install
 npm run dev
 ```
 
-`predev` rebuilds the fictional SQLite demo day and syncs on-device OCR assets. See [docs/getting-started.md](docs/getting-started.md).
+`predev` rebuilds the fictional SQLite demo day and syncs on-device OCR assets. See [docs/setup-and-usage.md](docs/setup-and-usage.md).
 
 ## Tests
 
@@ -31,10 +37,24 @@ Seed data must stay **fictional** — no live client, driver, or job-number iden
 
 ## Pull requests
 
-1. Keep changes focused (one concern per PR when practical).
-2. Run `npm test` before opening the PR.
-3. Update docs under `docs/` when behaviour or setup changes.
-4. Do not commit `public/demo.db`, vendored OCR binaries under `public/ocr/` (except `README.txt`), or local extract scratch folders.
+1. Target `main`. Keep changes focused (one concern per PR when practical).
+2. Run `npm test` (and ideally `npm run build`) before opening the PR.
+3. CI must pass: unit tests, Gitleaks, npm audit, production build — see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
+4. Update docs under `docs/` when behaviour or setup changes. Use ASCII hyphens (`-`) in docs.
+5. Do not commit secrets, `public/demo.db`, vendored OCR binaries under `public/ocr/` (except `README.txt`), `node_modules`, `dist`, or local extract scratch folders.
+
+## Code map
+
+| Area | Path |
+|------|------|
+| Shell / views | `src/App.jsx`, `src/components/` |
+| Shared state | `src/AppContext.jsx` |
+| Helpers | `src/data.js` |
+| Seed | `src/seed/` |
+| SQLite load | `src/db/` |
+| Mandata stubs | `src/integrations/mandataHandshake.js` |
+| OCR | `src/ocr/localOcr.js` |
+| CI | `.github/workflows/ci.yml` |
 
 ## Code style
 
