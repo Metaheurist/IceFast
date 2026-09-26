@@ -10,3 +10,5 @@ public/ocr/**
 public/demo.db
 coverage
 *.traineddata
+public/sql-wasm.js
+public/sql-wasm.wasm
