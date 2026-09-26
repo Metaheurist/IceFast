@@ -67,15 +67,15 @@ Open-source **warehouse companion** for cold-chain floors. Replace paper inbound
 | <img src="docs/icons/settings.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Installation & usage](docs/setup-and-usage.md)** - install, PWA, date override |
 | <img src="docs/icons/flask.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Testing & configuration](docs/testing-and-configuration.md)** - Vitest map, seed rules |
 | <img src="docs/icons/timer.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Build, test & CI](docs/build-test-and-ci.md)** - scripts, Actions, gates |
-| <img src="docs/icons/folder.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Architecture](docs/architecture.md)** - source map, shared state, PWA |
-| <img src="docs/icons/clipboard.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Data and seed](docs/data.md)** - `demo.db`, schema, fictional-data rules |
+| <img src="docs/icons/layers.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Architecture](docs/architecture.md)** - source map, shared state, PWA |
+| <img src="docs/icons/database.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Data and seed](docs/data.md)** - `demo.db`, schema, fictional-data rules |
 | <img src="docs/icons/shield.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Mandata handshake](docs/mandata.md)** - stub DTOs, goods vs reefer |
-| <img src="docs/icons/paperclip.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Known issues](docs/known-issues.md)** - OCR, PWA, demo refresh |
-| <img src="docs/icons/folder.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Project reference](docs/project-reference.md)** - tree and dependencies |
-| <img src="docs/icons/scroll.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Changelog](docs/CHANGELOG.md)** |
+| <img src="docs/icons/alert.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Known issues](docs/known-issues.md)** - OCR, PWA, demo refresh |
+| <img src="docs/icons/tree.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Project reference](docs/project-reference.md)** - tree and dependencies |
+| <img src="docs/icons/history.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Changelog](docs/CHANGELOG.md)** |
 | <img src="docs/icons/rocket.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Roadmap](docs/next-phase-development-plan.md)** |
 | <img src="docs/icons/user.svg" width="32" height="32" alt="" aria-hidden="true"> | **[About & support](docs/about-and-support.md)** |
-| <img src="docs/icons/paperclip.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Contributing](CONTRIBUTING.md)** |
+| <img src="docs/icons/git-branch.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Contributing](CONTRIBUTING.md)** |
 
 Demo seed is **fictional** (no live client names or job numbers). Temps shows `Demo only — not connected to Mandata Enterprise TMS`.
 
