@@ -9,7 +9,7 @@ import {
   isParkedUnit,
 } from './generateYardDay'
 
-/** Live clients plus WhatsApp identities from the original part-load group shots. */
+/** Live clients plus messaging identities from original part-load group shots. */
 const BANNED_LIVE_NAMES =
   /kerry|gilfresh|western brand|clonakilty|staunton|mallon|henderson|pinkerton|flamewood|ashlee|mckee|hegedus|finnebrogue|sykes|carroll/i
 
@@ -46,7 +46,7 @@ describe('generateYardDay', () => {
     expect(generateYardDay('22/08/2026')).toEqual(generateYardDay('22/08/2026'))
   })
 
-  it('does not include live client, driver, or WhatsApp identities', () => {
+  it('does not include live client, driver, or messaging identities', () => {
     const { trailers } = generateDemoDay('22/08/2026')
     const day = generateYardDay('22/08/2026', trailers)
     expect(JSON.stringify({ trailers, yard: day })).not.toMatch(BANNED_LIVE_NAMES)

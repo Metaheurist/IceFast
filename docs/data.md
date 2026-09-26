@@ -15,7 +15,7 @@ Date: `todaySheetDate()` unless `DEMO_LOAD_DATE=DD/MM/YYYY`. Job numbers look li
 
 ## Fictional-data rules
 
-Seed must not contain live client, driver, or WhatsApp identities. Tests fail on names such as Kerry, Gilfresh, Finnebrogue, Ashlee, and similar. Demo people (Niamh Boyle, Aoife Kane, Ellen Shaw, Mark Quinn) and demo customers (Northbridge Foods, Harbour Chill Ltd, …) are invented for the walkthrough.
+Seed must not contain live client, driver, or messaging identities. Tests fail on names such as Kerry, Gilfresh, Finnebrogue, Ashlee, and similar. Demo people (Niamh Boyle, Aoife Kane, Ellen Shaw, Mark Quinn) and demo customers (Northbridge Foods, Harbour Chill Ltd, …) are invented for the walkthrough.
 
 ## SQLite schema
 
@@ -41,7 +41,7 @@ Join keys the traffic office already uses, plus yard slang:
 | --- | --- |
 | `job_no`, `vehicle`, `trailer`, `driver` | Mandata-shaped (driver/vehicle empty if parked/unassigned) |
 | `work_type` | `collection` \| `delivery` \| `trunk` \| `fullMove` |
-| `yard_kind` | `partLoad` \| `fullLoad` \| `parked` \| `empty` \| `vor` (WhatsApp shorthand only) |
+| `yard_kind` | `partLoad` \| `fullLoad` \| `parked` \| `empty` \| `vor` (yard shorthand only) |
 | `twin`, `bay_no`, `fill_pct`, `status` | Yard |
 | `goods_temp_c` | Manifest / Cross Dock goods temp |
 | `zone1_*`, `zone2_*` | Reefer asset; null zone 2 = OFF |

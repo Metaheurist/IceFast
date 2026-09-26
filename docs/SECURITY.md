@@ -12,12 +12,12 @@ OCR runs **on-device** via vendored Tesseract assets under `/ocr` (no third-part
 
 - Demo customers, drivers, and job numbers are **fictional**.
 - Generator tests reject known live client name patterns.
-- Do not commit real warehouse extracts, WhatsApp exports, or production job lists.
+- Do not commit real warehouse extracts, messaging exports, or production job lists.
 
 ## Dependencies / CVE
 
 - Runtime and dev dependencies are declared in `package.json` / `package-lock.json`.
-- CI runs `npm audit --audit-level=high` and Gitleaks before merge — see [build-test-and-ci.md](build-test-and-ci.md).
+- CI runs `npm audit --audit-level=high` and Gitleaks before merge - see [build-test-and-ci.md](build-test-and-ci.md).
 
 ```bash
 npm audit --audit-level=high

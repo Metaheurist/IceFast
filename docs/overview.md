@@ -2,7 +2,7 @@
 
 Compact product summary. Full feature walkthrough: **[app-and-features.md](app-and-features.md)**.
 
-**IceFast** is an open-source warehouse companion for cold-chain operations. Floor staff and traffic share one local day of work instead of paper sheets and WhatsApp.
+**IceFast** is an open-source warehouse companion for cold-chain operations. Floor staff and traffic share one local day of work instead of paper sheets and ad-hoc messaging threads.
 
 A TMS (for example Mandata Enterprise, formerly Manpack) can remain the planner’s system of record. IceFast sits beside it: sheets, pallet progress, notes, and the yard temps loop that the TMS does not replace on the dock.
 
@@ -20,8 +20,8 @@ State is shared in the browser. A Floor tap shows up immediately on Dispatch. Te
 ## What it replaces
 
 - Paper **inbound** and **outbound** warehouse sheets
-- WhatsApp notes / hold messages to dispatch
-- The **Temperatures – Part loads** style WhatsApp group (parked-up trailer, bay, controller proof)
+- Ad-hoc notes / hold messages to dispatch
+- The **Temperatures / Part loads** style messaging group (parked-up trailer, bay, controller proof)
 
 ## What it does not do
 
@@ -31,13 +31,13 @@ Out of scope for the current prototype:
 - Replacing a Mandata Manifest-style driver app
 - Live Thermo King / Webfleet telematics
 - Camera capture of reefer controllers
-- Importing real WhatsApp history
+- Importing real messaging history
 - Live client, driver, or job-number data (seed is fictional)
 
 ## Demo banner
 
 Temps shows:
 
-> Demo only — not connected to Mandata Enterprise TMS
+> Demo only - not connected to Mandata Enterprise TMS
 
 Treat every load, trailer, and temperature on screen as **synthetic**. Rebuilds on each `npm run dev`.

@@ -1,6 +1,6 @@
 # IceFast documentation
 
-Open-source warehouse companion for cold-chain floor, dispatch, and yard temps. It replaces paper inbound/outbound sheets and WhatsApp groups (notes, holds, part-load temps) with a tablet/desktop board. A TMS such as **Mandata Enterprise** can stay the traffic-office system of record; this app does not call Mandata by default.
+Open-source warehouse companion for cold-chain floor, dispatch, and yard temps. It replaces paper inbound/outbound sheets and ad-hoc messaging groups (notes, holds, part-load temps) with a tablet/desktop board. A TMS such as **Mandata Enterprise** can stay the traffic-office system of record; this app does not call Mandata by default.
 
 | Doc | What it covers |
 | --- | --- |

@@ -143,7 +143,7 @@ describe('AppProvider / useApp', () => {
     expect(result.current.feed[0].message).toMatch(/on hold/)
   })
 
-  it('saves notes and syncs them to the live feed (WhatsApp replacement)', () => {
+  it('saves notes and syncs them to the live feed (messaging replacement)', () => {
     const { result } = renderHook(() => useApp(), { wrapper })
     const trailerId = DEMO_TRAILER_ID.OCR
     const jobId = DEMO_JOB_ID.OCR

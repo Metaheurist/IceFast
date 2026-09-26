@@ -17,14 +17,14 @@ Active roadmap for IceFast after the open-source v1.0 companion.
 
 ## Later / gated
 
-- Live Mandata (or other TMS) join using the existing handshake DTO shapes — requires vendor programme access
+- Live Mandata (or other TMS) join using the existing handshake DTO shapes - requires vendor programme access
 - Optional Thermo King / telematics adapters for reefer actuals (not photo OCR of controllers)
 - Offline conflict rules if more than one tablet edits the same load
 
 ## Explicitly not planned
 
 - Replacing Mandata Manifest as the driver app
-- Importing real WhatsApp history into the demo seed
+- Importing real messaging history into the demo seed
 - Shipping live client or driver identities
 
 Shipped work: [CHANGELOG.md](CHANGELOG.md). Product scope: [app-and-features.md](app-and-features.md).

@@ -1,6 +1,6 @@
 # IceFast
 
-Open-source **warehouse companion** for cold-chain floors. Replace paper inbound/outbound sheets and WhatsApp notes / part-load temps with a shared tablet and desktop board. A TMS such as **Mandata Enterprise** can remain the traffic-office system of record — this app does not call Mandata by default.
+Open-source **warehouse companion** for cold-chain floors. Replace paper inbound/outbound sheets and ad-hoc notes / part-load temp threads with a shared tablet and desktop board. A TMS such as **Mandata Enterprise** can remain the traffic-office system of record - this app does not call Mandata by default.
 
 **Changelog:** [CHANGELOG.md](CHANGELOG.md) · **Docs:** [docs/README.md](docs/README.md) · **License:** [MIT](LICENSE)
 
@@ -77,16 +77,16 @@ Open-source **warehouse companion** for cold-chain floors. Replace paper inbound
 | <img src="docs/icons/user.svg" width="32" height="32" alt="" aria-hidden="true"> | **[About & support](docs/about-and-support.md)** |
 | <img src="docs/icons/git-branch.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Contributing](CONTRIBUTING.md)** |
 
-Demo seed is **fictional** (no live client names or job numbers). Temps shows `Demo only — not connected to Mandata Enterprise TMS`.
+Demo seed is **fictional** (no live client names or job numbers). Temps shows `Demo only - not connected to Mandata Enterprise TMS`.
 
 ---
 
 ## Features
 
-- **Floor** — tablet warehouse sheet: status, pallet log, notes, bay times
-- **Dispatch** — desktop board: trailer progress, holds, live feed from Floor
-- **Temps** — part-load / parked-up board (Job No, vehicle, trailer, work type, bay, goods °C, reefer zones)
-- **Scan** — camera or photo + local Tesseract.js OCR to match a printed sheet to an active load
+- **Floor** - tablet warehouse sheet: status, pallet log, notes, bay times
+- **Dispatch** - desktop board: trailer progress, holds, live feed from Floor
+- **Temps** - part-load / parked-up board (Job No, vehicle, trailer, work type, bay, goods °C, reefer zones)
+- **Scan** - camera or photo + local Tesseract.js OCR to match a printed sheet to an active load
 
 Floor updates appear immediately on Dispatch. Temps actions append an ops thread line and a stub handshake payload for a future TMS join.
 
@@ -119,7 +119,7 @@ npm run test:coverage
 
 Covers status and pallet helpers, Floor ↔ Dispatch sync, Floor/Dispatch/Temps UI, Mandata handshake DTOs, Note/Pallet modals, SQLite seed, and sheet-field gap regressions.
 
-Map of suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI runs the same gate on every push and pull request — see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
+Map of suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI runs the same gate on every push and pull request - see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
 
 ---
 

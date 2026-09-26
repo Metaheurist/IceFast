@@ -47,7 +47,7 @@ const ZONE_TONE = {
 }
 
 function formatDeg(value) {
-  if (value == null || value === '') return '—'
+  if (value == null || value === '') return '-'
   const n = Number(value)
   return Number.isInteger(n) ? `${n}°` : `${n.toFixed(1)}°`
 }
@@ -61,7 +61,7 @@ function ZoneChip({ label, set, actual }) {
       <p className="font-mono text-sm font-bold tabular-nums leading-tight">
         {off ? 'OFF' : formatDeg(actual)}
       </p>
-      <p className="text-[10px] font-mono opacity-80">set {off ? '—' : formatDeg(set)}</p>
+      <p className="text-[10px] font-mono opacity-80">set {off ? '-' : formatDeg(set)}</p>
     </div>
   )
 }
@@ -99,7 +99,7 @@ function LoadCard({ unit, onBay, onGoods, onReefer, onAssign, onStatus }) {
             ) : null}
           </div>
           <p className="text-[11px] text-slate-500 mt-0.5">
-            Job No. <span className="font-mono font-semibold text-navy-800">{unit.jobNo || '—'}</span>
+            Job No. <span className="font-mono font-semibold text-navy-800">{unit.jobNo || '-'}</span>
             {unit.vehicle ? ` · Vehicle ${unit.vehicle}` : ''}
             {unit.bayNo ? ` · Bay ${unit.bayNo}` : ''}
           </p>
@@ -158,7 +158,7 @@ function ParkedCard({ unit, highlight }) {
           <span className="text-[9px] font-bold uppercase text-ice-500">Twin</span>
         ) : null}
       </div>
-      <p className="text-[10px] text-slate-500">{unit.vehicle || '—'}{unit.bayNo ? ` · Bay ${unit.bayNo}` : ''}</p>
+      <p className="text-[10px] text-slate-500">{unit.vehicle || '-'}{unit.bayNo ? ` · Bay ${unit.bayNo}` : ''}</p>
       <div className="mt-1.5 grid grid-cols-2 gap-1">
         <ZoneChip label="Z1" set={unit.zone1Set} actual={unit.zone1Actual} />
         <ZoneChip label="Z2" set={unit.zone2Set} actual={unit.zone2Actual} />
@@ -199,7 +199,7 @@ function ThreadItem({ item, units }) {
             </time>
           </div>
           <p className="text-[10px] font-mono text-slate-500">
-            Job {item.jobNo || '—'}
+            Job {item.jobNo || '-'}
             {unit?.trailer ? ` · ${unit.trailer}` : ''}
           </p>
           <p className="mt-1 text-sm leading-snug text-slate-800">{item.message}</p>
@@ -282,7 +282,7 @@ export default function TempsView() {
   return (
     <div className="space-y-4">
       <div className="rounded border border-ice-400/40 bg-ice-300/15 px-3 py-2 text-[12px] text-navy-900">
-        Demo only — not connected to Mandata Enterprise TMS. Job No, vehicle, trailer, work type and
+        Demo only - not connected to Mandata Enterprise TMS. Job No, vehicle, trailer, work type and
         bay are handshake keys; goods °C and reefer zones stay separate.
       </div>
 
@@ -292,7 +292,7 @@ export default function TempsView() {
             Part loads / Temps
           </h1>
           <p className="mt-0.5 text-xs text-slate-500">
-            Traffic-pad keys · Cross-dock bay · Yard thread replacing WhatsApp
+            Traffic-pad keys · Cross-dock bay · Shared yard ops thread
           </p>
         </div>
         <p className="text-xs font-medium text-slate-600">
