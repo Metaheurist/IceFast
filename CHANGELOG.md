@@ -4,7 +4,7 @@ Canonical notes: **[docs/CHANGELOG.md](docs/CHANGELOG.md)**.
 
 ## Unreleased
 
-- Documentation hub aligned with sibling Metaheurist repos (app overview, setup, testing, CI, security, roadmap).
+- Docs trimmed to codebase reference (removed roadmap and duplicate marketing pages).
 - GitHub Actions CI on push/PR: Vitest unit tests, Gitleaks, npm audit, production build.
 
 ## v1.0.0

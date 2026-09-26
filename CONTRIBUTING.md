@@ -1,12 +1,10 @@
-# Contributing to IceFast
+# Contributing
 
-Thanks for helping improve this open-source warehouse companion.
+## Before you change seed or handshake
 
-## Prerequisites
-
-1. [docs/SECURITY.md](docs/SECURITY.md) - fictional seed only; no live TMS credentials in-repo.
-2. [docs/data.md](docs/data.md) and [docs/mandata.md](docs/mandata.md) before changing seed or handshake shapes.
-3. Open an Issue before large features or a live Mandata join.
+1. [docs/SECURITY.md](docs/SECURITY.md)
+2. [docs/data.md](docs/data.md)
+3. [docs/mandata.md](docs/mandata.md)
 
 ## Setup
 
@@ -15,7 +13,7 @@ npm install
 npm run dev
 ```
 
-`predev` rebuilds the fictional SQLite demo day and syncs on-device OCR assets. See [docs/setup-and-usage.md](docs/setup-and-usage.md).
+`predev` rebuilds `demo.db` and syncs OCR assets. See [docs/setup-and-usage.md](docs/setup-and-usage.md).
 
 ## Tests
 
@@ -25,23 +23,17 @@ npm run test:watch
 npm run test:coverage
 ```
 
-Add or update unit tests next to the code you change (`*.test.js` / `*.test.jsx`). Prefer covering:
+Put tests next to the code (`*.test.js` / `*.test.jsx`). Cover helpers in `src/data.js`, state in `src/AppContext.jsx`, UI under `src/components/`, seed under `src/seed/`, and handshake under `src/integrations/` when those areas change.
 
-- Status / pallet / search helpers in `src/data.js`
-- Floor ↔ Dispatch state in `src/AppContext.jsx`
-- UI flows in `src/components/`
-- Seed generators under `src/seed/`
-- Handshake DTOs in `src/integrations/`
-
-Seed data must stay **fictional** - no live client, driver, or job-number identities. Existing tests fail on known client name patterns.
+Seed must stay fictional. Generator tests fail on known live-name patterns.
 
 ## Pull requests
 
-1. Target `main`. Keep changes focused (one concern per PR when practical).
-2. Run `npm test` (and ideally `npm run build`) before opening the PR.
-3. CI must pass: unit tests, Gitleaks, npm audit, production build - see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
-4. Update docs under `docs/` when behaviour or setup changes. Use ASCII hyphens (`-`) in docs.
-5. Do not commit secrets, `public/demo.db`, vendored OCR binaries under `public/ocr/` (except `README.txt`), `node_modules`, `dist`, or local extract scratch folders.
+1. Target `main`. Keep one concern per PR when practical.
+2. Run `npm test` (and `npm run build` for packaging changes) before opening.
+3. CI must pass: unit tests, Gitleaks, npm audit, production build ([docs/build-test-and-ci.md](docs/build-test-and-ci.md)).
+4. Update `docs/` when behaviour or setup changes. Use ASCII hyphens (`-`) in docs.
+5. Do not commit secrets, `public/demo.db`, vendored OCR under `public/ocr/` (except `README.txt`), `node_modules`, `dist`, or local extract scratch folders.
 
 ## Code map
 
@@ -52,10 +44,8 @@ Seed data must stay **fictional** - no live client, driver, or job-number identi
 | Helpers | `src/data.js` |
 | Seed | `src/seed/` |
 | SQLite load | `src/db/` |
-| Mandata stubs | `src/integrations/mandataHandshake.js` |
+| Handshake stubs | `src/integrations/mandataHandshake.js` |
 | OCR | `src/ocr/localOcr.js` |
 | CI | `.github/workflows/ci.yml` |
 
-## Code style
-
-Match the existing Vite + React patterns in the repo. Prefer clear names and small helpers over large new abstractions.
+Match existing Vite + React patterns in the repo.

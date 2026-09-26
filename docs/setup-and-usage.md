@@ -64,6 +64,6 @@ npm run build
 npm run preview
 ```
 
-Static output lands in `dist/`. There is no backend server; host like any static SPA/PWA.
+Static output lands in `dist/`. No backend; host as a static SPA/PWA.
 
-Short cheat sheet: [getting-started.md](getting-started.md). CI packaging notes: [build-test-and-ci.md](build-test-and-ci.md).
+CI: [build-test-and-ci.md](build-test-and-ci.md).

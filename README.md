@@ -1,12 +1,8 @@
 # IceFast
 
-Open-source **warehouse companion** for cold-chain floors. Replace paper inbound/outbound sheets and ad-hoc notes / part-load temp threads with a shared tablet and desktop board. A TMS such as **Mandata Enterprise** can remain the traffic-office system of record - this app does not call Mandata by default.
+Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch board, yard Temps, and on-device sheet Scan. Fictional SQLite demo day; Mandata handshake modules are stubs (no HTTP).
 
 **Changelog:** [CHANGELOG.md](CHANGELOG.md) · **Docs:** [docs/README.md](docs/README.md) · **License:** [MIT](LICENSE)
-
-### Roadmap
-
-[docs/next-phase-development-plan.md](docs/next-phase-development-plan.md)
 
 ### Tech stack
 
@@ -62,35 +58,32 @@ Open-source **warehouse companion** for cold-chain floors. Replace paper inbound
 
 | | |
 | :--- | :--- |
-| <img src="docs/icons/lock.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Security](docs/SECURITY.md)** - threat model, seed rules, out of scope |
-| <img src="docs/icons/home.svg" width="32" height="32" alt="" aria-hidden="true"> | **[App overview & features](docs/app-and-features.md)** - Floor, Dispatch, Temps, Scan |
-| <img src="docs/icons/settings.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Installation & usage](docs/setup-and-usage.md)** - install, PWA, date override |
+| <img src="docs/icons/lock.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Security](docs/SECURITY.md)** - seed rules, CI audit/Gitleaks |
+| <img src="docs/icons/home.svg" width="32" height="32" alt="" aria-hidden="true"> | **[App overview](docs/app-and-features.md)** - Floor, Dispatch, Temps, Scan |
+| <img src="docs/icons/settings.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Installation & usage](docs/setup-and-usage.md)** - scripts, PWA, date override |
 | <img src="docs/icons/flask.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Testing & configuration](docs/testing-and-configuration.md)** - Vitest map, seed rules |
-| <img src="docs/icons/timer.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Build, test & CI](docs/build-test-and-ci.md)** - scripts, Actions, gates |
-| <img src="docs/icons/layers.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Architecture](docs/architecture.md)** - source map, shared state, PWA |
-| <img src="docs/icons/database.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Data and seed](docs/data.md)** - `demo.db`, schema, fictional-data rules |
-| <img src="docs/icons/shield.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Mandata handshake](docs/mandata.md)** - stub DTOs, goods vs reefer |
-| <img src="docs/icons/alert.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Known issues](docs/known-issues.md)** - OCR, PWA, demo refresh |
+| <img src="docs/icons/timer.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Build, test & CI](docs/build-test-and-ci.md)** - scripts, Actions |
+| <img src="docs/icons/layers.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Architecture](docs/architecture.md)** - source map, AppContext, PWA |
+| <img src="docs/icons/database.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Data and seed](docs/data.md)** - `demo.db`, schema, fictional-data tests |
+| <img src="docs/icons/shield.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Mandata handshake](docs/mandata.md)** - stub DTO writers |
+| <img src="docs/icons/alert.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Known issues](docs/known-issues.md)** - persistence, OCR, PWA, seed |
 | <img src="docs/icons/tree.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Project reference](docs/project-reference.md)** - tree and dependencies |
 | <img src="docs/icons/history.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Changelog](docs/CHANGELOG.md)** |
-| <img src="docs/icons/rocket.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Roadmap](docs/next-phase-development-plan.md)** |
-| <img src="docs/icons/user.svg" width="32" height="32" alt="" aria-hidden="true"> | **[About & support](docs/about-and-support.md)** |
+| <img src="docs/icons/user.svg" width="32" height="32" alt="" aria-hidden="true"> | **[About](docs/about-and-support.md)** |
 | <img src="docs/icons/git-branch.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Contributing](CONTRIBUTING.md)** |
 
-Demo seed is **fictional** (no live client names or job numbers). Temps shows `Demo only - not connected to Mandata Enterprise TMS`.
+Demo seed is fictional. Temps banner: `Demo only - not connected to Mandata Enterprise TMS`.
 
 ---
 
 ## Features
 
-- **Floor** - tablet warehouse sheet: status, pallet log, notes, bay times
-- **Dispatch** - desktop board: trailer progress, holds, live feed from Floor
-- **Temps** - part-load / parked-up board (Job No, vehicle, trailer, work type, bay, goods °C, reefer zones)
-- **Scan** - camera or photo + local Tesseract.js OCR to match a printed sheet to an active load
+- **Floor** - `FloorView.jsx`: status, pallet log, notes, bay times
+- **Dispatch** - `DashboardView.jsx`: trailer progress, holds, live feed
+- **Temps** - `TempsView.jsx`: yard units, goods °C, reefer zones, ops thread
+- **Scan** - `SheetScanModal.jsx` + `localOcr.js`: local Tesseract match to active jobs
 
-Floor updates appear immediately on Dispatch. Temps actions append an ops thread line and a stub handshake payload for a future TMS join.
-
-Full walkthrough: [docs/app-and-features.md](docs/app-and-features.md) · Views detail: [docs/views.md](docs/views.md).
+Detail: [docs/app-and-features.md](docs/app-and-features.md) · [docs/views.md](docs/views.md).
 
 ---
 
@@ -101,11 +94,9 @@ npm install
 npm run dev
 ```
 
-Each start rebuilds `public/demo.db` with a fictional inbound, outbound, and yard-temps day. Override the sheet date with `DEMO_LOAD_DATE=DD/MM/YYYY`.
+`predev` rebuilds `public/demo.db` and syncs OCR into `public/ocr`. Override sheet date with `DEMO_LOAD_DATE=DD/MM/YYYY`.
 
-Install as a **PWA** (browser Add to Home Screen). OCR engine files sync into `public/ocr` via `npm run ocr:sync` and are cached on-device by the service worker.
-
-Full commands: [docs/setup-and-usage.md](docs/setup-and-usage.md).
+Commands: [docs/setup-and-usage.md](docs/setup-and-usage.md).
 
 ---
 
@@ -117,23 +108,21 @@ npm run test:watch
 npm run test:coverage
 ```
 
-Covers status and pallet helpers, Floor ↔ Dispatch sync, Floor/Dispatch/Temps UI, Mandata handshake DTOs, Note/Pallet modals, SQLite seed, and sheet-field gap regressions.
-
-Map of suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI runs the same gate on every push and pull request - see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
+Suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI: [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
 
 ---
 
-## Mandata (optional)
+## Handshake stubs
 
-This companion is **not connected** to Mandata. Handshake stubs live in `src/integrations/mandataHandshake.js` (`toMandataJobPatch`, `toMandataAssetTemp`, `toMandataEvent`). There is no public OpenAPI schema; a live join needs vendor integration access.
+`src/integrations/mandataHandshake.js`: `toMandataJobPatch`, `toMandataAssetTemp`, `toMandataEvent`. No HTTP.
 
-Details: [docs/mandata.md](docs/mandata.md) · Seed schema: [docs/data.md](docs/data.md).
+[docs/mandata.md](docs/mandata.md) · [docs/data.md](docs/data.md).
 
 ---
 
 ## Security
 
-Authoritative guide: **[docs/SECURITY.md](docs/SECURITY.md)**. Root [`SECURITY.md`](SECURITY.md) points GitHub's security tab at that file.
+[docs/SECURITY.md](docs/SECURITY.md). Root [`SECURITY.md`](SECURITY.md) points at that file.
 
 ---
 
