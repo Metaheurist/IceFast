@@ -1,0 +1,20 @@
+# Gitleaks configuration for CI (see .github/workflows/ci.yml).
+# Working-tree scan with --no-git so old commits are not re-flagged.
+
+title = "IceFast"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "README/docs badges and examples; node_modules, build outputs, caches"
+paths = [
+  '''^README\.md$''',
+  '''^CHANGELOG\.md$''',
+  '''^docs/''',
+  '''^node_modules/''',
+  '''^dist/''',
+  '''^coverage/''',
+  '''^\.vite/''',
+  '''^public/ocr/''',
+]
