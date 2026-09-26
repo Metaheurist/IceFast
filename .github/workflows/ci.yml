@@ -1,4 +1,4 @@
-# IceFast — CI/CD
+# IceFast - CI/CD
 # PR / push: unit tests + secret scan + npm audit + production build
 name: CI
 

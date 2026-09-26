@@ -155,7 +155,7 @@ function trailer({ id, direction, vehicle, trailer, driver, jobs, ...rest }) {
 }
 
 /**
- * @param {string} [dateStr] DD/MM/YYYY — defaults to today
+ * @param {string} [dateStr] DD/MM/YYYY - defaults to today
  * @returns {{ loadDate: string, trailers: object[] }}
  */
 export function generateDemoDay(dateStr = todaySheetDate()) {
@@ -179,7 +179,7 @@ export function generateDemoDay(dateStr = todaySheetDate()) {
       deliverTo: 'TBC',
       deliverTown: 'TBC',
       status: 'hold',
-      note: 'Returns issue — do not plan',
+      note: 'Returns issue - do not plan',
       orderRef: 'HOLD-RETURNS',
     }),
     makeJob(ctx, {

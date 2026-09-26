@@ -51,7 +51,7 @@ In Chrome/Edge or Safari on a phone or tablet: **Add to Home Screen**. The servi
 
 OCR files are gitignored except `public/ocr/README.txt`. They appear after `ocr:sync` (also part of `predev`).
 
-Do not commit client PDF extracts or OCR scratch folders — the demo day is generated only from `src/seed/`.
+Do not commit client PDF extracts or OCR scratch folders - the demo day is generated only from `src/seed/`.
 
 ## Refresh
 

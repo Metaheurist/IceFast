@@ -38,9 +38,9 @@ unit-tests  +  security-audit  +  build
 
 ### Jobs
 
-1. **Unit tests** — Node 22, `npm ci`, `npm test` (Vitest).
-2. **Secret scan & dependency check** — Gitleaks (working-tree scan) + `npm audit --audit-level=high`.
-3. **Build** — `npm run build` to catch Vite/PWA packaging failures.
+1. **Unit tests** - Node 22, `npm ci`, `npm test` (Vitest).
+2. **Secret scan & dependency check** - Gitleaks (working-tree scan) + `npm audit --audit-level=high`.
+3. **Build** - `npm run build` to catch Vite/PWA packaging failures.
 
 Linux jobs run on **ubuntu-24.04**. Gitleaks allowlists `README.md`, `CHANGELOG.md`, and `docs/` for badge/doc false positives (see [`.gitleaks.toml`](../.gitleaks.toml)).
 

@@ -2,7 +2,7 @@
   "name": "icefast",
   "private": false,
   "version": "1.0.0",
-  "description": "Open-source cold-chain warehouse companion — floor sheets, dispatch, yard temps, on-device OCR",
+  "description": "Open-source cold-chain warehouse companion - floor sheets, dispatch, yard temps, on-device OCR",
   "license": "MIT",
   "type": "module",
   "scripts": {

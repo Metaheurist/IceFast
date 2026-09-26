@@ -1,6 +1,6 @@
 /**
  * Stub handshake DTOs for a later Mandata Enterprise TMS join.
- * No HTTP — public docs do not publish an OpenAPI schema.
+ * No HTTP - public docs do not publish an OpenAPI schema.
  * Keys match traffic-office language: job no, vehicle, trailer, work type, bay.
  */
 

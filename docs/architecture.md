@@ -33,7 +33,7 @@ scripts/
 docs/                     This documentation
 ```
 
-Demo fleet IDs in the seed use the fictional **IF** trailer prefix (e.g. IF200). There is no client extract pipeline in this repo — seed is generated only by `generateDemoDay` / `generateYardDay`.
+Demo fleet IDs in the seed use the fictional **IF** trailer prefix (e.g. IF200). There is no client extract pipeline in this repo - seed is generated only by `generateDemoDay` / `generateYardDay`.
 
 
 ## Shared state

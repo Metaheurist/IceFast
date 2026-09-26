@@ -234,7 +234,7 @@ export function generateYardDay(dateStr, trailers = []) {
       bayNo: '16',
       fillPct: 0,
       status: YARD_STATUS.VOR,
-      note: 'VOR — off road',
+      note: 'VOR - off road',
     }),
     unit({
       id: YARD_UNIT_ID.PARKED_149,

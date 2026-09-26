@@ -4,7 +4,7 @@ Thanks for helping improve this open-source warehouse companion.
 
 ## Prerequisites
 
-1. [docs/SECURITY.md](docs/SECURITY.md) — fictional seed only; no live TMS credentials in-repo.
+1. [docs/SECURITY.md](docs/SECURITY.md) - fictional seed only; no live TMS credentials in-repo.
 2. [docs/data.md](docs/data.md) and [docs/mandata.md](docs/mandata.md) before changing seed or handshake shapes.
 3. Open an Issue before large features or a live Mandata join.
 
@@ -33,13 +33,13 @@ Add or update unit tests next to the code you change (`*.test.js` / `*.test.jsx`
 - Seed generators under `src/seed/`
 - Handshake DTOs in `src/integrations/`
 
-Seed data must stay **fictional** — no live client, driver, or job-number identities. Existing tests fail on known client name patterns.
+Seed data must stay **fictional** - no live client, driver, or job-number identities. Existing tests fail on known client name patterns.
 
 ## Pull requests
 
 1. Target `main`. Keep changes focused (one concern per PR when practical).
 2. Run `npm test` (and ideally `npm run build`) before opening the PR.
-3. CI must pass: unit tests, Gitleaks, npm audit, production build — see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
+3. CI must pass: unit tests, Gitleaks, npm audit, production build - see [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
 4. Update docs under `docs/` when behaviour or setup changes. Use ASCII hyphens (`-`) in docs.
 5. Do not commit secrets, `public/demo.db`, vendored OCR binaries under `public/ocr/` (except `README.txt`), `node_modules`, `dist`, or local extract scratch folders.
 

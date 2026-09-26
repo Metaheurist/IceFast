@@ -21,7 +21,7 @@ Living list of demo/prototype caveats. Prefer fixing with tests when practical.
 
 ## Mandata
 
-- Handshake DTOs are stubs — Temps banner correctly states there is no live TMS connection.
+- Handshake DTOs are stubs - Temps banner correctly states there is no live TMS connection.
 - Do not assume field names match an unpublished Mandata OpenAPI schema.
 
 ## Seed
