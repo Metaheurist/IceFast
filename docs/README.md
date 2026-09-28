@@ -6,7 +6,7 @@ Local-first cold-chain warehouse PWA: Floor, Dispatch, Temps, and on-device shee
 | --- | --- |
 | [Security](SECURITY.md) | Seed rules, CI audit/Gitleaks, no secrets in-repo |
 | [App overview](app-and-features.md) | Views and source files |
-| [Views](views.md) | Floor / Dispatch / Temps / Scan behaviour |
+| [Views](views.md) | Floor / Dispatch / Temps / Scan behaviour, with screenshots |
 | [Installation & usage](setup-and-usage.md) | Install, scripts, PWA, `DEMO_LOAD_DATE` |
 | [Testing & configuration](testing-and-configuration.md) | Vitest commands and suite map |
 | [Build, test & CI](build-test-and-ci.md) | Scripts and GitHub Actions |

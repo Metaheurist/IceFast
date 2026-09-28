@@ -29,6 +29,8 @@ Floor and Dispatch share `AppContext` (search, filters, trailers, feed). Temps a
 
 ### Floor
 
+![Floor view](images/floor.png)
+
 - Direction chips: All / Outbound / Inbound / Hold / Collect
 - Trailer blocks: vehicle, trailer, driver, bay, times, checker
 - Job rows: pallets, temp band, customer, Job No., status, note
@@ -38,12 +40,16 @@ Floor and Dispatch share `AppContext` (search, filters, trailers, feed). Temps a
 
 ### Dispatch
 
+![Dispatch live dashboard](images/dispatch.png)
+
 - Trailer cards with pallet progress and hold emphasis
 - Job detail: collect/deliver, order ref, inbound lineage, notes
 - Live feed from Floor mutations
 - Same search / Scan as Floor
 
 ### Temps
+
+![Part loads / Temps](images/temps.png)
 
 - Labels: Job No, Vehicle, Trailer, Work type, Bay
 - Columns: open loads, parked units, ops thread
@@ -53,6 +59,8 @@ Floor and Dispatch share `AppContext` (search, filters, trailers, feed). Temps a
 
 ### Scan
 
+![Scan result with ranked job matches](images/scan-result.png)
+
 1. Camera or photo
 2. Worker reads text from `/ocr` assets (no CDN at runtime)
 3. `matchLoadsFromSheetText` in `src/data.js`
@@ -60,4 +68,4 @@ Floor and Dispatch share `AppContext` (search, filters, trailers, feed). Temps a
 
 Demo sample: `buildDemoOcrSample` in OCR helpers (fictional IF200).
 
-UI detail: [views.md](views.md).
+UI detail and more screenshots (modals, trailer detail, reefer dialog, scan camera): [views.md](views.md).

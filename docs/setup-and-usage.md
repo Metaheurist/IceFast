@@ -12,7 +12,9 @@ npm install
 npm run dev
 ```
 
-`predev` rebuilds `public/demo.db` and syncs OCR engine files into `public/ocr` before Vite starts. Open the URL Vite prints (typically `http://localhost:5173/`).
+`predev` rebuilds `public/demo.db` and syncs OCR engine files into `public/ocr` before Vite starts. Open the URL Vite prints (typically `http://localhost:5173/`); the app opens on Floor:
+
+![Floor view after npm run dev](images/floor.png)
 
 ### Useful scripts
 
@@ -43,7 +45,22 @@ Job numbers and yard job keys are derived from that date, so changing the day ch
 
 ## Install as a PWA
 
-In Chrome/Edge or Safari on a phone or tablet: **Add to Home Screen**. The service worker caches:
+In Chrome/Edge or Safari on a phone or tablet: **Add to Home Screen**. On narrow screens the header nav collapses to icons (Floor, Dispatch, Temps) and Scan to a camera button:
+
+<table>
+<tr>
+<td width="33%" valign="top"><img src="images/mobile-floor.png" alt="Floor on a phone"></td>
+<td width="33%" valign="top"><img src="images/mobile-dispatch.png" alt="Dispatch on a phone"></td>
+<td width="33%" valign="top"><img src="images/mobile-temps.png" alt="Temps on a phone"></td>
+</tr>
+<tr>
+<td align="center">Floor</td>
+<td align="center">Dispatch</td>
+<td align="center">Temps</td>
+</tr>
+</table>
+
+The service worker caches:
 
 - App shell
 - `demo.db` + sql.js WASM

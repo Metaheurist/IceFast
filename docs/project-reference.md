@@ -4,7 +4,7 @@
 
 ```text
 IceFast/
-  docs/
+  docs/                 guides; images/ holds the README and view screenshots
   public/               demo.db + OCR generated at build
   scripts/              db:build, ocr:sync
   src/                  app, seed, db, OCR, integrations

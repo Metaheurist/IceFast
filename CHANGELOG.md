@@ -4,6 +4,9 @@ Canonical notes: **[docs/CHANGELOG.md](docs/CHANGELOG.md)**.
 
 ## Unreleased
 
+- Screenshots in the README and docs (`docs/images/`): hero, view gallery, per-view and phone captures.
+- Fix: `ocr:sync` vendors Tesseract relaxed-SIMD cores so on-device OCR works on current Chrome/Edge.
+- Fix: Dispatch trailer detail header no longer hides the first job row on wide screens.
 - Docs trimmed to codebase reference (removed roadmap and duplicate marketing pages).
 - GitHub Actions CI on push/PR: Vitest unit tests, Gitleaks, npm audit, production build.
 
