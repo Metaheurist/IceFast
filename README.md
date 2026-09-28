@@ -2,6 +2,8 @@
 
 Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch board, yard Temps, and on-device sheet Scan. Fictional SQLite demo day; Mandata handshake modules are stubs (no HTTP).
 
+![IceFast Dispatch board on desktop and Floor sheets on a phone](docs/images/hero.png)
+
 **Changelog:** [CHANGELOG.md](CHANGELOG.md) · **Docs:** [docs/README.md](docs/README.md) · **License:** [MIT](LICENSE)
 
 ### Tech stack
@@ -84,6 +86,29 @@ Demo seed is fictional. Temps banner: `Demo only - not connected to Mandata Ente
 - **Scan** - `SheetScanModal.jsx` + `localOcr.js`: local Tesseract match to active jobs
 
 Detail: [docs/app-and-features.md](docs/app-and-features.md) · [docs/views.md](docs/views.md).
+
+### Screenshots
+
+<table>
+<tr>
+<td width="50%" valign="top"><a href="docs/views.md#floor"><img src="docs/images/floor.png" alt="Floor sheets"></a></td>
+<td width="50%" valign="top"><a href="docs/views.md#dispatch"><img src="docs/images/dispatch.png" alt="Dispatch live dashboard"></a></td>
+</tr>
+<tr>
+<td align="center"><b>Floor</b> - trailer sheets, pallet progress, notes</td>
+<td align="center"><b>Dispatch</b> - fleet totals, trailer cards, exception feed</td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="docs/views.md#temps"><img src="docs/images/temps.png" alt="Part loads and yard temps"></a></td>
+<td width="50%" valign="top"><a href="docs/views.md#scan"><img src="docs/images/scan-result.png" alt="Sheet scan with on-device OCR matches"></a></td>
+</tr>
+<tr>
+<td align="center"><b>Temps</b> - open loads, parked reefers, ops thread</td>
+<td align="center"><b>Scan</b> - on-device OCR matched to active jobs</td>
+</tr>
+</table>
+
+Captured from `npm run dev` with the fictional demo day. More per view in [docs/views.md](docs/views.md); phone layouts in [docs/setup-and-usage.md](docs/setup-and-usage.md#install-as-a-pwa).
 
 ---
 
