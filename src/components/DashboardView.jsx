@@ -418,7 +418,7 @@ function TrailerDetailModal({ trailer, onClose }) {
           <div className="hidden xl:block">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[1100px] border-collapse text-left text-xs bg-white">
-                <thead className="sticky top-8 z-10">
+                <thead>
                   <tr className="bg-slate-100 text-[10px] font-bold uppercase tracking-wide text-slate-600 border-b border-grid">
                     <th className="px-3 py-2 whitespace-nowrap">Done/Set</th>
                     <th className="px-3 py-2 whitespace-nowrap">Temp</th>
