@@ -15,7 +15,13 @@ Facts for this repository. No backend; no TMS API calls in the default app.
 
 ## CI
 
-- `npm audit --audit-level=high` and Gitleaks on every push/PR ([build-test-and-ci.md](build-test-and-ci.md), [`.gitleaks.toml`](../.gitleaks.toml)).
+`security.yml` runs on every push/PR and weekly ([build-test-and-ci.md](build-test-and-ci.md)):
+
+- Gitleaks working-tree secret scan ([`.gitleaks.toml`](../.gitleaks.toml))
+- `npm audit --audit-level=high` (CVE screening) and `npm audit signatures` (registry signatures / provenance)
+- Dependency review on PRs: fails on high+ advisories and GPL-3.0 / AGPL-3.0 licences
+- CodeQL `security-extended` for JavaScript; results in the repository Security tab
+- Dependabot weekly grouped updates for npm and GitHub Actions ([`.github/dependabot.yml`](../.github/dependabot.yml))
 - Default demo needs no API keys. Do not commit `.env` or vendor credentials.
 
 ```bash

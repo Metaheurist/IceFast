@@ -26,6 +26,9 @@ npm run dev
 | `npm test` | Rebuild DB, then Vitest once |
 | `npm run test:watch` | Vitest watch |
 | `npm run test:coverage` | Coverage report |
+| `npm run bench` | Vitest benchmarks |
+| `npm run test:e2e:install` | Install Playwright Chromium + system deps |
+| `npm run test:e2e` | Playwright against `vite preview` (build first) |
 | `npm run build` | Production bundle (`prebuild` rebuilds DB + OCR) |
 | `npm run preview` | Serve the production build |
 

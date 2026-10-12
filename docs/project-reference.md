@@ -8,7 +8,10 @@ IceFast/
   public/               demo.db + OCR generated at build
   scripts/              db:build, ocr:sync
   src/                  app, seed, db, OCR, integrations
-  .github/workflows/
+  e2e/                  Playwright specs
+  .github/workflows/    unit-tests, security, benchmark, e2e
+  .github/dependabot.yml
+  playwright.config.js
   CONTRIBUTING.md
   index.html
   package.json
@@ -25,6 +28,7 @@ IceFast/
 | OCR | `tesseract.js` |
 | Build | `vite`, `@vitejs/plugin-react`, `vite-plugin-pwa` |
 | Test | `vitest`, `@vitest/coverage-v8`, `@testing-library/*`, `jsdom` |
+| E2E | `@playwright/test` |
 
 Lockfile: `package-lock.json`. CI uses `npm ci`.
 

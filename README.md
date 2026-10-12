@@ -43,6 +43,8 @@ Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch bo
 
 [![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![Testing Library](https://img.shields.io/badge/Testing%20Library-React-E33332?style=flat-square&logo=testinglibrary&logoColor=white)](https://testing-library.com/)
+[![Playwright](https://img.shields.io/badge/Playwright-e2e-2EAD33?style=flat-square&logo=playwright&logoColor=white)](https://playwright.dev/)
+[![CodeQL](https://img.shields.io/badge/CodeQL-SAST-2F363D?style=flat-square&logo=github&logoColor=white)](https://codeql.github.com/)
 [![Gitleaks](https://img.shields.io/badge/Gitleaks-secret%20scan-1E2E3E?style=flat-square)](https://github.com/gitleaks/gitleaks)
 [![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?style=flat-square&logo=githubactions&logoColor=white)](https://github.com/Metaheurist/IceFast/actions)
 
@@ -52,7 +54,10 @@ Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch bo
 
 **Repository:** [github.com/Metaheurist/IceFast](https://github.com/Metaheurist/IceFast)
 
-[![CI](https://img.shields.io/github/actions/workflow/status/Metaheurist/IceFast/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/Metaheurist/IceFast/actions/workflows/ci.yml)
+[![Unit tests](https://img.shields.io/github/actions/workflow/status/Metaheurist/IceFast/unit-tests.yml?branch=main&style=flat-square&label=unit%20tests)](https://github.com/Metaheurist/IceFast/actions/workflows/unit-tests.yml)
+[![Playwright](https://img.shields.io/github/actions/workflow/status/Metaheurist/IceFast/e2e.yml?branch=main&style=flat-square&label=playwright)](https://github.com/Metaheurist/IceFast/actions/workflows/e2e.yml)
+[![Security](https://img.shields.io/github/actions/workflow/status/Metaheurist/IceFast/security.yml?branch=main&style=flat-square&label=security)](https://github.com/Metaheurist/IceFast/actions/workflows/security.yml)
+[![Benchmarks](https://img.shields.io/github/actions/workflow/status/Metaheurist/IceFast/benchmark.yml?branch=main&style=flat-square&label=benchmarks)](https://github.com/Metaheurist/IceFast/actions/workflows/benchmark.yml)
 
 ---
 
@@ -60,11 +65,11 @@ Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch bo
 
 | | |
 | :--- | :--- |
-| <img src="docs/icons/lock.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Security](docs/SECURITY.md)** - seed rules, CI audit/Gitleaks |
+| <img src="docs/icons/lock.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Security](docs/SECURITY.md)** - seed rules, Gitleaks, CVE audit, CodeQL |
 | <img src="docs/icons/home.svg" width="32" height="32" alt="" aria-hidden="true"> | **[App overview](docs/app-and-features.md)** - Floor, Dispatch, Temps, Scan |
 | <img src="docs/icons/settings.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Installation & usage](docs/setup-and-usage.md)** - scripts, PWA, date override |
 | <img src="docs/icons/flask.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Testing & configuration](docs/testing-and-configuration.md)** - Vitest map, seed rules |
-| <img src="docs/icons/timer.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Build, test & CI](docs/build-test-and-ci.md)** - scripts, Actions |
+| <img src="docs/icons/timer.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Build, test & CI](docs/build-test-and-ci.md)** - scripts, four Actions workflows |
 | <img src="docs/icons/layers.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Architecture](docs/architecture.md)** - source map, AppContext, PWA |
 | <img src="docs/icons/database.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Data and seed](docs/data.md)** - `demo.db`, schema, fictional-data tests |
 | <img src="docs/icons/shield.svg" width="32" height="32" alt="" aria-hidden="true"> | **[Mandata handshake](docs/mandata.md)** - stub DTO writers |
@@ -128,12 +133,13 @@ Commands: [docs/setup-and-usage.md](docs/setup-and-usage.md).
 ## Tests
 
 ```bash
-npm test
-npm run test:watch
-npm run test:coverage
+npm test                  # Vitest unit tests
+npm run test:coverage     # unit tests + coverage
+npm run bench             # Vitest benchmarks
+npm run build && npm run test:e2e   # Playwright (run test:e2e:install once)
 ```
 
-Suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI: [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
+Suites: [docs/testing-and-configuration.md](docs/testing-and-configuration.md). CI workflows (unit tests, security, benchmarks, Playwright): [docs/build-test-and-ci.md](docs/build-test-and-ci.md).
 
 ---
 

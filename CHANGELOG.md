@@ -4,6 +4,10 @@ Canonical notes: **[docs/CHANGELOG.md](docs/CHANGELOG.md)**.
 
 ## Unreleased
 
+- CI split into four workflows: `unit-tests.yml` (Vitest + coverage), `security.yml` (Gitleaks, npm audit, `npm audit signatures`, dependency review, CodeQL, weekly schedule), `benchmark.yml` (Vitest bench with job-summary table), and `e2e.yml` (production build + Playwright on desktop and tablet Chromium). Replaces the single `ci.yml`.
+- Playwright e2e suite (`e2e/app.spec.js`) and Vitest benchmarks (`src/data.bench.js`, `src/seed/seed.bench.js`); new scripts `bench`, `test:e2e`, `test:e2e:install`.
+- Dependabot weekly grouped updates for npm and GitHub Actions.
+- Deps: `npm audit fix` for high-severity advisories in transitive `brace-expansion`, `source-map-js`, and `undici`.
 - Screenshots in the README and docs (`docs/images/`): hero, view gallery, per-view and phone captures.
 - Fix: `ocr:sync` vendors Tesseract relaxed-SIMD cores so on-device OCR works on current Chrome/Edge.
 - Fix: Dispatch trailer detail header no longer hides the first job row on wide screens.

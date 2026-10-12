@@ -31,7 +31,7 @@ Seed must stay fictional. Generator tests fail on known live-name patterns.
 
 1. Target `main`. Keep one concern per PR when practical.
 2. Run `npm test` (and `npm run build` for packaging changes) before opening.
-3. CI must pass: unit tests, Gitleaks, npm audit, production build ([docs/build-test-and-ci.md](docs/build-test-and-ci.md)).
+3. CI must pass: Unit tests, Security (Gitleaks, npm audit, dependency review, CodeQL), and Playwright (build + e2e). Benchmarks report only ([docs/build-test-and-ci.md](docs/build-test-and-ci.md)).
 4. Update `docs/` when behaviour or setup changes. Use ASCII hyphens (`-`) in docs.
 5. Do not commit secrets, `public/demo.db`, vendored OCR under `public/ocr/` (except `README.txt`), `node_modules`, `dist`, or local extract scratch folders.
 
@@ -46,6 +46,8 @@ Seed must stay fictional. Generator tests fail on known live-name patterns.
 | SQLite load | `src/db/` |
 | Handshake stubs | `src/integrations/mandataHandshake.js` |
 | OCR | `src/ocr/localOcr.js` |
-| CI | `.github/workflows/ci.yml` |
+| Benchmarks | `src/**/*.bench.js` |
+| Playwright | `e2e/`, `playwright.config.js` |
+| CI | `.github/workflows/` (`unit-tests`, `security`, `benchmark`, `e2e`) |
 
 Match existing Vite + React patterns in the repo.
