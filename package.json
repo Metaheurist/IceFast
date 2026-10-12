@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "lucide-react": "^0.511.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "sql.js": "^1.14.2",
     "tesseract.js": "^7.0.0"
   },
