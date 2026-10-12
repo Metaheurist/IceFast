@@ -1,0 +1,48 @@
+# IceFast - Vitest benchmarks (search, OCR matching, seed generators, handshake DTOs)
+name: Benchmarks
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: benchmark-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  vitest-bench:
+    name: Vitest bench
+    if: |
+      github.event_name != 'push' ||
+      !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run benchmarks
+        run: npx vitest bench --run --outputJson bench-results.json
+
+      - name: Benchmark summary
+        run: node scripts/bench-summary.mjs bench-results.json >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload benchmark results
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-results-${{ github.sha }}
+          path: bench-results.json
+          retention-days: 30
