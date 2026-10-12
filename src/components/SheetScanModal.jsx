@@ -9,6 +9,19 @@ import {
   warmLocalOcr,
 } from '../ocr/localOcr'
 
+const PREVIEW_IMAGE_TYPES = new Set([
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+  'image/heic',
+  'image/heif',
+])
+
+function toBlobPreviewUrl(blob) {
+  const url = URL.createObjectURL(blob)
+  return url.startsWith('blob:') ? url : null
+}
+
 export default function SheetScanModal({ open, onClose }) {
   const { trailers, setSearchQuery, setStatusFilter, setTempFilter } = useApp()
   const inputId = useId()
@@ -164,8 +177,7 @@ export default function SheetScanModal({ open, onClose }) {
       canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('Capture failed'))), 'image/jpeg', 0.9)
     })
     if (previewUrl) URL.revokeObjectURL(previewUrl)
-    const url = URL.createObjectURL(blob)
-    setPreviewUrl(url)
+    setPreviewUrl(toBlobPreviewUrl(blob))
     setCaptureBlob(blob)
     stopCamera()
     await runOcrOnBlob(blob)
@@ -175,10 +187,14 @@ export default function SheetScanModal({ open, onClose }) {
     const next = e.target.files?.[0]
     e.target.value = ''
     if (!next) return
+    if (!PREVIEW_IMAGE_TYPES.has(next.type)) {
+      setError('Choose a JPEG, PNG, WebP, or HEIC photo of the sheet')
+      return
+    }
     stopCamera()
     if (previewUrl) URL.revokeObjectURL(previewUrl)
     setCaptureBlob(next)
-    setPreviewUrl(URL.createObjectURL(next))
+    setPreviewUrl(toBlobPreviewUrl(next))
     setPhase('idle')
     setOcrText('')
     setMatches([])
@@ -265,7 +281,7 @@ export default function SheetScanModal({ open, onClose }) {
             ref={inputRef}
             id={inputId}
             type="file"
-            accept="image/*"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif"
             capture="environment"
             className="sr-only"
             onChange={onPickFile}
