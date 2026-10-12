@@ -2,7 +2,8 @@
  * Vendor Tesseract worker/core + English traineddata into public/ocr
  * so OCR runs fully on-device (no CDN after install / first sync).
  */
-import { copyFileSync, mkdirSync, writeFileSync, existsSync } from 'node:fs'
+import { createHash } from 'node:crypto'
+import { copyFileSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync, existsSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -12,6 +13,9 @@ const outDir = join(root, 'public', 'ocr')
 const workerSrc = join(root, 'node_modules', 'tesseract.js', 'dist', 'worker.min.js')
 const coreDir = join(root, 'node_modules', 'tesseract.js-core')
 const langUrl = 'https://tessdata.projectnaptha.com/4.0.0_fast/eng.traineddata.gz'
+const langSha256 = '18c1ac52b75e35d44735fb6c2a60acfaf23033524653200738e98f0243edb75b'
+
+const sha256 = (buf) => createHash('sha256').update(buf).digest('hex')
 
 mkdirSync(outDir, { recursive: true })
 
@@ -36,11 +40,23 @@ for (const name of [
 }
 
 const langPath = join(outDir, 'eng.traineddata.gz')
-if (!existsSync(langPath)) {
+const haveValidLang = existsSync(langPath) && sha256(readFileSync(langPath)) === langSha256
+if (!haveValidLang) {
   console.log('Downloading eng.traineddata.gz (fast int)…')
   const res = await fetch(langUrl)
   if (!res.ok) throw new Error(`Failed to download language data: ${res.status}`)
-  writeFileSync(langPath, Buffer.from(await res.arrayBuffer()))
+  const data = Buffer.from(await res.arrayBuffer())
+  const actual = sha256(data)
+  if (actual !== langSha256) {
+    throw new Error(`eng.traineddata.gz checksum mismatch: expected ${langSha256}, got ${actual}`)
+  }
+  const tmpPath = `${langPath}.${process.pid}.tmp`
+  try {
+    writeFileSync(tmpPath, data, { flag: 'wx' })
+    renameSync(tmpPath, langPath)
+  } finally {
+    rmSync(tmpPath, { force: true })
+  }
 }
 
 writeFileSync(
