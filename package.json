@@ -16,7 +16,10 @@
     "pretest": "npm run db:build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench --run",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "lucide-react": "^0.511.0",
@@ -26,6 +29,7 @@
     "tesseract.js": "^7.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "@tailwindcss/vite": "^4.1.8",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",

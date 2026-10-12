@@ -9,6 +9,9 @@ public/ocr/**
 !public/ocr/README.txt
 public/demo.db
 coverage
+playwright-report
+test-results
+bench-results.json
 *.traineddata
 public/sql-wasm.js
 public/sql-wasm.wasm
