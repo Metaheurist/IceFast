@@ -1,4 +1,4 @@
-import { bench, describe } from 'vitest'
+import { describe, test } from 'vitest'
 import { generateDemoDay } from './generateDemoDay'
 import { generateYardDay } from './generateYardDay'
 import {
@@ -12,24 +12,32 @@ const demoDay = generateDemoDay(DATE)
 const yardDay = generateYardDay(DATE, demoDay.trailers)
 
 describe('seed generators', () => {
-  bench('generateDemoDay', () => {
-    generateDemoDay(DATE)
+  test('generateDemoDay', async ({ bench }) => {
+    await bench('generateDemoDay', () => {
+      generateDemoDay(DATE)
+    }).run()
   })
 
-  bench('generateYardDay', () => {
-    generateYardDay(DATE, demoDay.trailers)
+  test('generateYardDay', async ({ bench }) => {
+    await bench('generateYardDay', () => {
+      generateYardDay(DATE, demoDay.trailers)
+    }).run()
   })
 })
 
 describe('handshake DTO writers', () => {
-  bench('job patch + asset temp (all yard units)', () => {
-    for (const unit of yardDay.units) {
-      toMandataJobPatch(unit)
-      toMandataAssetTemp(unit)
-    }
+  test('job patch + asset temp (all yard units)', async ({ bench }) => {
+    await bench('job patch + asset temp (all yard units)', () => {
+      for (const unit of yardDay.units) {
+        toMandataJobPatch(unit)
+        toMandataAssetTemp(unit)
+      }
+    }).run()
   })
 
-  bench('event (all yard events)', () => {
-    for (const event of yardDay.events) toMandataEvent(event)
+  test('event (all yard events)', async ({ bench }) => {
+    await bench('event (all yard events)', () => {
+      for (const event of yardDay.events) toMandataEvent(event)
+    }).run()
   })
 })

@@ -24,9 +24,9 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
@@ -35,13 +35,13 @@ jobs:
         run: npm ci
 
       - name: Run benchmarks
-        run: npx vitest bench --run --outputJson bench-results.json
+        run: npx vitest bench --run --reporter=default --reporter=json --outputFile.json=bench-results.json
 
       - name: Benchmark summary
         run: node scripts/bench-summary.mjs bench-results.json >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload benchmark results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: bench-results-${{ github.sha }}
           path: bench-results.json

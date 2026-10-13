@@ -8,6 +8,7 @@ Canonical notes: **[docs/CHANGELOG.md](docs/CHANGELOG.md)**.
 - Playwright e2e suite (`e2e/app.spec.js`) and Vitest benchmarks (`src/data.bench.js`, `src/seed/seed.bench.js`); new scripts `bench`, `test:e2e`, `test:e2e:install`.
 - Dependabot weekly grouped updates for npm and GitHub Actions.
 - Deps: `npm audit fix` for high-severity advisories in transitive `brace-expansion`, `source-map-js`, and `undici`.
+- Deps: Dependabot #1-#6 in one change: Vite 8, `@vitejs/plugin-react` 6, Vitest 5, `vite-plugin-pwa` 2, React 19.3, testing-library and `jsdom` patches, GitHub Actions majors. Benchmarks moved to the Vitest 5 `bench` fixture and JSON reporter.
 - Screenshots in the README and docs (`docs/images/`): hero, view gallery, per-view and phone captures.
 - Fix: `ocr:sync` vendors Tesseract relaxed-SIMD cores so on-device OCR works on current Chrome/Edge.
 - Fix: Dispatch trailer detail header no longer hides the first job row on wide screens.
