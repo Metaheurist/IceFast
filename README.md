@@ -41,7 +41,7 @@ Local-first **warehouse companion** PWA for cold-chain Floor sheets, Dispatch bo
 </td>
 <td>
 
-[![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![Vitest](https://img.shields.io/badge/Vitest-5-6E9F18?style=flat-square&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![Testing Library](https://img.shields.io/badge/Testing%20Library-React-E33332?style=flat-square&logo=testinglibrary&logoColor=white)](https://testing-library.com/)
 [![Playwright](https://img.shields.io/badge/Playwright-e2e-2EAD33?style=flat-square&logo=playwright&logoColor=white)](https://playwright.dev/)
 [![CodeQL](https://img.shields.io/badge/CodeQL-SAST-2F363D?style=flat-square&logo=github&logoColor=white)](https://codeql.github.com/)

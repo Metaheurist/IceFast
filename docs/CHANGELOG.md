@@ -4,6 +4,7 @@ All notable changes to IceFast are recorded here.
 
 ## Unreleased
 
+- Deps: Dependabot #7, #8, and #9. `lucide-react` 0.511 to 1.57, React and `react-dom` 19.3.1, `sql.js` 1.15.0, Playwright 1.64.1, `jsdom` 30.1.3, Vitest and `@vitest/coverage-v8` 5.0.5. Lockfile `@vitest/mocker` 5.0.5 covers GHSA-xp26-3454-mjgp (patched in 5.0.3). `npm audit fix` bumps transitive `fast-uri` and `serialize-javascript` under `workbox-build`. `npm audit` is clean.
 - CI split into four workflows: `unit-tests.yml` (Vitest + coverage), `security.yml` (Gitleaks, npm audit, `npm audit signatures`, dependency review, CodeQL, weekly schedule), `benchmark.yml` (Vitest bench with job-summary table), and `e2e.yml` (production build + Playwright on desktop and tablet Chromium). Replaces the single `ci.yml`.
 - Playwright e2e suite (`e2e/app.spec.js`) and Vitest benchmarks (`src/data.bench.js`, `src/seed/seed.bench.js`); new scripts `bench`, `test:e2e`, `test:e2e:install`.
 - Dependabot weekly grouped updates for npm and GitHub Actions.
