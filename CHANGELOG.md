@@ -4,6 +4,7 @@ Canonical notes: **[docs/CHANGELOG.md](docs/CHANGELOG.md)**.
 
 ## Unreleased
 
+- Deps: Dependabot #11 and #12 (lucide-react 1.64, sql.js 1.15.2, Playwright 1.65, Vite 8.3.6, plugin-react 6.2.1, Tailwind 4.3.4, Vitest 5.1.0).
 - Deps: Dependabot #7, #8, and #9 (lucide-react 1.57, React 19.3.1, sql.js 1.15, Playwright 1.64.1, jsdom 30.1.3, Vitest 5.0.5). `@vitest/mocker` 5.0.5 covers GHSA-xp26-3454-mjgp. `npm audit` is clean after the `workbox-build` transitive bumps.
 - CI split into four workflows: `unit-tests.yml` (Vitest + coverage), `security.yml` (Gitleaks, npm audit, `npm audit signatures`, dependency review, CodeQL, weekly schedule), `benchmark.yml` (Vitest bench with job-summary table), and `e2e.yml` (production build + Playwright on desktop and tablet Chromium). Replaces the single `ci.yml`.
 - Playwright e2e suite (`e2e/app.spec.js`) and Vitest benchmarks (`src/data.bench.js`, `src/seed/seed.bench.js`); new scripts `bench`, `test:e2e`, `test:e2e:install`.
